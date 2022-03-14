@@ -25,14 +25,13 @@ class App extends React.Component {
   
 changeNews = (e) => {
   this.setState({ [e.target.name] : e.target.value })
-  console.log(e.target.value)
 }
 
 searchNews = (e) => {
   e.preventDefault();
   
   
-  this.state();
+  this.setState({ [e.target.name] : e.target.value})
 }
 //buat function untuk onSubmit
 
@@ -41,7 +40,7 @@ searchNews = (e) => {
     return (
       <div>
         <div>
-          <form onSubmit={this.state}> {/* edit lagi */}
+          <form onSubmit={this.searchNews}> {/* edit lagi */}
             <label className='label'>Searching News with NewsAPI</label>
             <input type="text" name='search' value={this.state.search} className='form-control my-1'
             onChange={this.changeNews} placeholder='input your search in here' />
